@@ -10,7 +10,7 @@ import mx.com.eb.domain.Persona;
 @Controller
 @Slf4j
 public class ControllerInicio {
-	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ControllerInicio.class);
+	//private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ControllerInicio.class);
 	
 	@Value("${index.saludos}")
 	private String mensaje;
@@ -18,9 +18,13 @@ public class ControllerInicio {
 	public String inicio(Model model) {
 		var mensaje = this.mensaje;
 		var persona = new Persona();
-		
+		persona.setNombre("Benjamin");
+		persona.setApellido("Cortes");
+		persona.setEmail("lalobenja@gmail.com");
+		persona.setTelefono("5548271856");
 		log.info("ejecutando el controlador Spring MVC");
 		model.addAttribute("mensaje",mensaje);
+		model.addAttribute("persona", persona);
 		return "index";
 	}
 	
