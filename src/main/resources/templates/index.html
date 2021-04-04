@@ -2,11 +2,13 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-	<title>Inicio</title>
+	<title>Personas</title>
 	<meta charset="UTF-8">
 </head>
 
 <body>
+	
+	<a th:href="@{/agregar}">Crear persona</a>
 	<div>inicio</div>
 	<div th:if="${personas != null and !personas.empty}">
 		<table>
