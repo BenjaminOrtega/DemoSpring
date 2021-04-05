@@ -3,6 +3,7 @@ package mx.com.eb.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -36,4 +37,18 @@ public class ControllerInicio{
 		return "redirect:/";
 	}
 	
+	@GetMapping("/editar/{idPersona}")
+	public String editar(Persona persona, Model model) {
+		persona = personaService.encontrarPersona(persona);
+		model.addAttribute("persona", persona);
+		return "modificar";
+	}
+	
+	@GetMapping("/eliminar")
+	public String eliminar(Persona persona) {
+		
+		personaService.eliminar(persona);
+		
+		return "redirect:/";
+	}
 }

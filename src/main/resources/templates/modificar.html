@@ -5,7 +5,8 @@
 		<h1>Datos de la perona</h1>
 		<a th:href="@{/}">Regresar</a>
 		<form th:action="@{/guarda}" method="post" th:object="${persona}">
-		
+			<input type="hidden" name="idPersona" th:field="*{idPersona}"/>
+			<br/>
 			<label for="nombre">Nombre: </label>
 			<input type="text" name="nombre" th:field="*{nombre}"/>
 			<br/>
