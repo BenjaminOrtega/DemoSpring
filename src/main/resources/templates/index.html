@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	
+	<header th:replace="layout/plantilla :: header"></header>
 	<a th:href="@{/agregar}">Crear persona</a>
 	<div>inicio</div>
 	<div th:if="${personas != null and !personas.empty}">
@@ -33,7 +33,7 @@
 	<div th:if="${personas == null or personas.empty}">
 		Lista vacía
 	</div>
-
+	<footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 
 </html>
