@@ -9,7 +9,13 @@
 			<h1 th:text="#{plantilla.titulo}"></h1>
 		</header>
 		<footer th:fragment="footer">
-			<p>[[#{plantilla.pie}]]</p>
+		
+			<div>
+				<br/>
+				<a th:href="@{/(lang=es)}">Es</a>|
+				<a th:href="@{/(lang=en)}">En</a>|
+				<span>[[#{plantilla.pie}]]</span>
+			</div>
 		</footer>
 	</body>
 </html>
