@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 	<head>
+		<meta charset="utf-8">
 		<title>Plantilla</title>
 	</head>
 	<body>
 		<header th:fragment="header">
-			<h1>Control de Cliente</h1>
+			<h1 th:text="#{plantilla.titulo}"></h1>
 		</header>
 		<footer th:fragment="footer">
-			<p>Derechos reservados</p>
+			<p>[[#{plantilla.pie}]]</p>
 		</footer>
 	</body>
 </html>
