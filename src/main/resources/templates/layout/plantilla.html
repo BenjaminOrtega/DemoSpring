@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<head>
 		<meta charset="utf-8">
 		<title>Plantilla</title>
@@ -16,6 +17,8 @@
 				<a th:href="@{/(lang=en)}">En</a>|
 				<span>[[#{plantilla.pie}]]</span>
 				<form method="POST" th:action="@{/logout}">
+					<b>User: </b> <span sec:authentication="name">Usuario</span>
+					<b>Roles: </b> <span sec:authentication="principal.authorities">Roles</span> 
 					<a href="#" onclick="this.parentNode.submit();">Logout</a>
 				</form>
 			</div>
